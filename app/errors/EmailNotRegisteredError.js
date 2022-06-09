@@ -1,14 +1,14 @@
-const ApplicationError = require("./ApplicationError");
+const ApplicationError = require('./ApplicationError')
 
-class EmailNotRegisteredError extends ApplicationError {
-  constructor(email) {
-    super(`${email} is not registered!`);
-    this.email = email;
+class EmailAlreadyTakenError extends ApplicationError {
+  constructor (email) {
+    super(`${email} is already taken!`)
+    this.email = email
   }
 
-  get details() {
+  get details () {
     return { email: this.email }
   }
 }
 
-module.exports = EmailNotRegisteredError;
+module.exports = EmailAlreadyTakenError
